@@ -302,6 +302,7 @@ Sitemap --> Mongo`,
       learned:
         "AI applications must be designed defensively. You must expect the LLM to return garbage, write schemas to catch it, and build tools to audit its decisions.",
     },
+    youtubeUrl: "https://youtu.be/3VQf3VlektQ",
     architectureDiagrams: [
       {
         title: "Behavior Intelligence Processing Pipeline",

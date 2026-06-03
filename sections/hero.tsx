@@ -23,7 +23,7 @@ const socialLinks = [
       </svg>
     ),
     label: "GitHub",
-    href: "#",
+    href: "https://github.com/kaushik0010",
   },
   {
     icon: (props: React.SVGProps<SVGSVGElement>) => (
@@ -42,7 +42,7 @@ const socialLinks = [
       </svg>
     ),
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/kaushik010/",
   },
   {
     icon: (props: React.SVGProps<SVGSVGElement>) => (
@@ -59,14 +59,14 @@ const socialLinks = [
       </svg>
     ),
     label: "X",
-    href: "#",
+    href: "https://x.com/kaushikp010",
   },
   {
     icon: (props: React.ComponentProps<typeof BookOpen>) => (
       <BookOpen {...props} />
     ),
     label: "Dev.to",
-    href: "#",
+    href: "https://dev.to/panicengineer",
   },
 ];
 
