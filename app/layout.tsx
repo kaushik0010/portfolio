@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kaushikpaykoli.dev"),
+  metadataBase: new URL("https://kaushik-paykoli.vercel.app"),
 
   title: "Kaushik Paykoli | Full Stack Software Engineer",
   description:
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kaushikpaykoli.dev",
+    url: "https://kaushik-paykoli.vercel.app",
     title: "Kaushik Paykoli | Full Stack Software Engineer",
     description:
       "Full Stack Software Engineer building high-performance web applications, developer tools, and defensive AI pipelines.",
