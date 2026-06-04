@@ -121,16 +121,16 @@ export function FeaturedProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-center"
               >
-                {/* Column A: Content Panel */}
+                {/* Column A Wrapper: Content Panel */}
                 <div
-                  className={`lg:col-span-6 flex flex-col space-y-6 ${
+                  className={`contents lg:col-span-6 lg:flex lg:flex-col lg:space-y-6 ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
                   {/* Category & Title */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 order-1 lg:order-none">
                     <span className="font-mono text-[10px] sm:text-xs uppercase tracking-wider text-accent">
                       {project.category}
                     </span>
@@ -139,61 +139,64 @@ export function FeaturedProjects() {
                     </h3>
                   </div>
 
-                  {/* Summary */}
-                  <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
-                    {project.description}
-                  </p>
+                  {/* Details Block: Summary, Highlights, Tags, CTA */}
+                  <div className="flex flex-col space-y-6 order-3 lg:order-none">
+                    {/* Summary */}
+                    <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
+                      {project.description}
+                    </p>
 
-                  {/* Operational Highlights */}
-                  <div className="space-y-4 pt-2">
-                    {project.highlights.map((highlight) => {
-                      const Icon = highlight.icon;
-                      return (
-                        <div key={highlight.title} className="flex gap-3 items-start">
-                          <div className="flex-shrink-0 mt-0.5 p-1.5 rounded-lg border border-white/5 bg-white/5 text-accent">
-                            <Icon className="w-3.5 h-3.5" />
+                    {/* Operational Highlights */}
+                    <div className="space-y-4 pt-2">
+                      {project.highlights.map((highlight) => {
+                        const Icon = highlight.icon;
+                        return (
+                          <div key={highlight.title} className="flex gap-3 items-start">
+                            <div className="flex-shrink-0 mt-0.5 p-1.5 rounded-lg border border-white/5 bg-white/5 text-accent">
+                              <Icon className="w-3.5 h-3.5" />
+                            </div>
+                            <div>
+                              <h4 className="text-xs font-semibold text-text-primary">
+                                {highlight.title}
+                              </h4>
+                              <p className="text-[11px] sm:text-xs text-text-muted mt-0.5 leading-relaxed font-normal">
+                                {highlight.text}
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="text-xs font-semibold text-text-primary">
-                              {highlight.title}
-                            </h4>
-                            <p className="text-[11px] sm:text-xs text-text-muted mt-0.5 leading-relaxed font-normal">
-                              {highlight.text}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
 
-                  {/* Tech Badges */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/5 text-text-secondary"
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 pt-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="font-mono text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/5 text-text-secondary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* View Case Study CTA */}
+                    <div className="pt-4">
+                      <Button
+                        variant="secondary"
+                        href={`/work/${project.slug}`}
+                        className="font-mono text-xs py-2.5 px-5 flex items-center gap-2 group border border-white/5 w-fit"
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* View Case Study CTA */}
-                  <div className="pt-4">
-                    <Button
-                      variant="secondary"
-                      href={`/work/${project.slug}`}
-                      className="font-mono text-xs py-2.5 px-5 flex items-center gap-2 group border border-white/5 w-fit"
-                    >
-                      View Case Study
-                      <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </Button>
+                        View Case Study
+                        <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
 
                 {/* Column B: Premium Image Frame Mockup */}
                 <div
-                  className={`lg:col-span-6 w-full flex items-center justify-center relative group ${
+                  className={`lg:col-span-6 w-full flex items-center justify-center relative group order-2 ${
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >

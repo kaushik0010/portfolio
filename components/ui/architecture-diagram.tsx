@@ -81,7 +81,7 @@ export function ArchitectureDiagram({ definition, title, className }: Architectu
         </div>
       )}
 
-      <div className="glass-panel border border-white/5 rounded-xl p-6 bg-bg-secondary/35 flex items-center justify-center overflow-x-auto w-full relative min-h-[250px]">
+      <div className="glass-panel border border-white/5 rounded-xl p-6 bg-bg-secondary/35 flex items-center justify-start md:justify-center overflow-x-auto w-full relative min-h-[250px]">
         {error ? (
           <div className="flex flex-col items-center gap-3 py-8 text-center max-w-sm">
             <AlertCircle className="w-8 h-8 text-red-500/80" />
@@ -93,7 +93,7 @@ export function ArchitectureDiagram({ definition, title, className }: Architectu
         ) : svg ? (
           <div
             ref={containerRef}
-            className="w-full flex justify-center text-text-primary svg-container"
+            className="w-full flex justify-start md:justify-center text-text-primary svg-container"
             dangerouslySetInnerHTML={{ __html: svg }}
           />
         ) : (
@@ -109,9 +109,10 @@ export function ArchitectureDiagram({ definition, title, className }: Architectu
           height: auto !important;
           background: transparent !important;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .svg-container svg {
-            min-width: 550px !important;
+            max-width: none !important;
+            min-width: 650px !important;
           }
         }
         .svg-container svg * {
